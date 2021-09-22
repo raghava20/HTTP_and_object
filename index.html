@@ -1,127 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        * {
+        *{
             margin-left: 10px;
             padding: 1px;
         }
-
-        h2,
-        h4 {
+        h2,h4{
             color: rgb(24, 78, 78);
         }
-
-        li {
+        li{
             padding: 5px;
-        }
-        .italic{
-            font-style: italic;
         }
     </style>
 </head>
-
 <body>
-    <h2 style="text-align: center;">Objects And Its Internal Representation In JavaScript</h2>
-    <p>Objects, in JavaScript, is it’s most important data-type and forms the building blocks for modern JavaScript.
-        These objects are quite different from JavaScript’s primitive data-types(Number, String, Boolean, null,
-        undefined and symbol) in the sense that while these primitive data-types all store a single value each
-        (depending on their types).</p>
-    <p>Objects are more complex and each object may contain any combination of these primitive data-types as well as
-        reference data-types. An object, is a reference data type. Variables that are assigned a reference value are
-        given a reference or a pointer to that value. That reference or pointer points to the location in memory where
-        the object is stored. The variables don’t actually store the value.</p>
-    <p>Loosely speaking, objects in JavaScript may be defined as an unordered collection of related data, of primitive
-        or reference types, in the form of “key: value” pairs. These keys can be variables or functions and are called
-        properties and methods, respectively, in the context of an object.</p>
-    <p>For Eg. If your object is a student, it will have properties like name, age, address, id, etc and methods like
-        updateAddress, updateNam, etc.</p>
-
-    <h4>Objects and properties</h4>
-
-    <p>A JavaScript object has properties associated with it. A property of an object can be explained as a variable
-        that is attached to the object. Object properties are basically the same as ordinary JavaScript variables,
-        except for the attachment to objects. The properties of an object define the characteristics of the object. You
-        access the properties of an object with a simple dot-notation:</p>
-    <p class="italic">objectName.propertyName</p>
-
-    <p>Like all JavaScript variables, both the object name (which could be a normal variable) and property name are case
-        sensitive. You can define a property by assigning it a value. For example, let’s create an object named myCar
-        and give it properties named make, model, and year as follows:</p>
-    <p class="italic">var myCar = new Object(); <br>
-        myCar.make = 'Ford'; <br>
-        myCar.model = 'Mustang'; <br>
-        myCar.year = 1969;</p>
-
-    <p>Unassigned properties of an object are undefined (and not null).</p>
-    <p class="italic">myCar.color; // undefined</p>
-
-    <p>Properties of JavaScript objects can also be accessed or set using a bracket notation (for more details see
-        property accessors). Objects are sometimes called associative arrays, since each property is associated with a
-        string value that can be used to access it. So, for example, you could access the properties of the myCar object
-        as follows:</p>
-    <p class="italic">myCar['make'] = 'Ford'; <br>
-        myCar['model'] = 'Mustang'; <br>
-        myCar['year'] = 1969;</p>
-
-    <h4>Creating Objects In JavaScript :</h4>
-    <h4>Create JavaScript Object with Object Literal</h4>
-
-    <p>One of easiest way to create a javascript object is object literal, simply define the property and values inside
-        curly braces as shown below</p>
-    <p class="italic">let bike = {name: 'SuperSport', maker:'Ducati', engine:'937cc'}; </p>
-
-    <h4>Create JavaScript Object with Constructor
-    </h4>
-    <p>Constructor is nothing but a function and with help of new keyword, constructor function allows to create
-        multiple objects of same flavor as shown below</p>
-    <p class="italic">function Vehicle(name, maker) { <br>
-        this.name = name; <br>
-        this.maker = maker; <br>
-        } <br>
-        let car1 = new Vehicle(’Fiesta’, 'Ford’); <br>
-        let car2 = new Vehicle(’Santa Fe’, 'Hyundai’)<br> 
-        console.log(car1.name); //Output: Fiesta <br>
-        console.log(car2.name); //Output: Santa Fe</p>
-
-    <h4>Using the JavaScript Keyword new
-    </h4>
-    <p class="italic">The following example also creates a new JavaScript object with four properties:
-        Example <br>
-        var person = new Object(); <br>
-        person.firstName = “John”; <br>
-        person.lastName = “Doe”; <br>
-        person.age = 50; <br>
-        person.eyeColor = “blue”;</p>
-
-    <h4>Using the Object.create method
-    </h4>
-    <p>Objects can also be created using the Object.create() method. This method can be very useful, because it allows
-        you to choose the prototype object for the object you want to create, without having to define a constructor
-        function.</p>
-
-    <p class="italic">// Animal properties and method encapsulation <br>
-        var Animal = { <br>
-        type: 'Invertebrates', // Default value of properties <br>
-        displayType: function() { // Method which will display type of Animal <br>
-        console.log(this.type); <br>
-        } <br>
-        }; <br>
-        // Create new animal type called animal1 <br>
-        var animal1 = Object.create(Animal); <br>
-        animal1.displayType(); // Output:Invertebrates <br>
-        // Create new animal type called Fishes <br>
-        var fish = Object.create(Animal); <br>
-        fish.type = 'Fishes'; <br>
-        fish.displayType(); <br>
-        // Output:Fishes</p>
+    <h2 style="text-align: center;">Difference between HTTP1.1 vs HTTP2</h2>
 
 
+    <h4>What is the HTTP/2 Protocol</h4>
+    <p>Hypertext Transfer Protocol (HTTP) is a set of standards allowing internet users to exchange website information. There have been four HTTP iterations since its introduction in 1991.</p>
+    <p>HTTP/2 was released in 2015 as a major revision to the HTTP/1.1 protocol. It was derived from the SPDY protocol as a way to improve the online experience by speeding up page loads and reducing round-trip time (RTT), especially on resource-heavy web pages.</p>
+
+    <h4>From SPDY to HTTP/2</h4>
+    <p>HTTP/1.1 was the third version of HTTP and the standard protocol for over 15 years. It introduced persistent connections for improved performance and laid the foundation for standard requests, such as GET, HEAD, PUT, and POST.</p>
+       <p> As websites became more resource-intensive, however, HTTP/1.1’s limitations began to show. Specifically, its use of one outstanding request per TCP connection created significant overhead, slowing down page load times.</p>
+        <p>
+        In 2010, Google released the SPDY protocol as a way of modifying how HTTP handles requests and responses. Its focus was on reducing latency via TCP pipelining and providing mandatory compression, amongst other features.</p>
+        <p>
+        While HTTP/2 was initially modeled after SPDY, it was soon modified to include unique features, including a fixed header compression algorithm, (in contrast to SPDY’s dynamic stream-based compression). Following its release, Google announced that it would remove support for SPDY in favor of HTTP/2.</p>
+
+
+    <h4>HTTP/1.1 vs. HTTP/2 Protocol</h4>
+        <p>HTTP/2 improved on HTTP/1.1 in a number of ways that allowed for speedier content delivery and improved user experience, including:</p>
+        <img src="Capture.PNG" height="400px" width="800px" style="text-align: center;padding-left: 400px;">
+        <ul>
+            <li><b>Binary protocols</b> – Binary protocols consume less bandwidth, are more efficiently parsed and are less error-prone than the textual protocols used by HTTP/1.1. Additionally, they can better handle elements such as whitespace, capitalization and line endings.</li>
+
+            <li><b>Multiplexing</b> – HTTP/2 is multiplexed, i.e., it can initiate multiple requests in parallel over a single TCP connection. As a result, web pages containing several elements are delivered over one TCP connection. These capabilities solve the head-of-line blocking problem in HTTP/1.1, in which a packet at the front of the line blocks others from being transmitted.</li>
+
+            <li><b>Header compression</b> – HTTP/2 uses header compression to reduce the overhead caused by TCP’s slow-start mechanism.</li>
+
+            <li><b>Server push</b> – HTTP/2 servers push likely-to-be-used resources into a browser’s cache, even before they’re requested. This allows browsers to display content without additional request cycles.</li>
+
+            <li><b>Increased security</b> – Web browsers only support HTTP/2 via encrypted connections, increasing user and application security.</li>
+            
+        </ul>
 </body>
-
 </html>
